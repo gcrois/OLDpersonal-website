@@ -1,0 +1,19 @@
+body {
+  margin: 0 0 0 0;
+  font-family: 'Fira Sans Condensed', sans-serif;
+}
+
+#disp {
+  position: absolute;
+  width: 100%;
+  text-align: center;
+  top: 50%;
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+#coords {
+  position: absolute;
+  top: 95%;
+  left: 95%;
+}
