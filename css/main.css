@@ -17,3 +17,21 @@ body {
   top: 95%;
   left: 95%;
 }
+
+.left-aligned {
+  text-align: left;
+  margin-left: calc(50% - 250px);
+}
+
+a, a:link, a:visited {
+  text-decoration: none;
+  color: blue;
+}
+
+a:hover {
+  color: purple;
+}
+
+#sim {
+  width: 80px;
+}
