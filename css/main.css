@@ -4,8 +4,9 @@ body {
 }
 
 #disp {
+  margin-left: 5%;
   position: absolute;
-  width: 100%;
+  width: 90%;
   text-align: center;
   top: 50%;
   -ms-transform: translateY(-50%);
