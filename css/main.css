@@ -13,12 +13,6 @@ body {
   transform: translateY(-50%);
 }
 
-#coords {
-  position: absolute;
-  top: 95%;
-  left: 95%;
-}
-
 .left-aligned {
   text-align: left;
   margin-left: calc(50% - 250px);
@@ -31,8 +25,4 @@ a, a:link, a:visited {
 
 a:hover {
   color: purple;
-}
-
-#sim {
-  width: 80px;
 }

@@ -1,0 +1,11 @@
+#me {
+    border-radius: 50%;
+    height: 20vw;
+    width: 20vw;
+    margin-bottom: 4px;
+    object-fit: cover;
+}
+
+#name {
+    font-size: xx-large;
+}
