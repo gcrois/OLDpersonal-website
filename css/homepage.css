@@ -7,5 +7,18 @@
 }
 
 #name {
-    font-size: xx-large;
+    font-size: 36px;
+}
+
+.sub {
+    font-size: 20px;
+    color: gray;
+    line-height: 30px;
+}
+
+.inline {
+    position: absolute;
+    margin-left: -40px;
+    margin-top: 2px;
+    height: 25px;
 }
