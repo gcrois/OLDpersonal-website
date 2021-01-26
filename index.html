@@ -6,6 +6,9 @@
     <link rel="stylesheet" type="text/css" href="css/main.css">
     <link rel="stylesheet" type="text/css" href="css/homepage.css">
 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <script src="js/main.js"></script>
 
     <link href="https://fonts.googleapis.com/css2?family=Fira+Sans+Condensed&display=swap" rel="stylesheet">
 
@@ -25,10 +28,40 @@
         <div class="sub">
           university of tennessee's resident rapscallion
           <br>
-          <br><image class="inline" src="resources/images/GitHub-Mark-120px-plus.png"></image> GitHub
-          <br><image class="inline" src="resources/images/twitter.png"></image>Twitter
-          <br>Email
-          <br>Address
+          <table>
+            <tr>
+              <td>
+                <image class="inline" src="resources/images/GitHub-Mark-120px-plus.png"></image>
+              </td>
+              <td>
+                <a id="github" onclick="get_link('github', 'GitHub', 'github.com/gcrois', 'https:\/\/github.com/gcrois')" href="#" class="rowlink">GitHub</a>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <image class="inline" src="resources/images/twitter.png"></image>
+              </td>
+              <td>
+                <a id="twitter" onclick="get_link('twitter', 'Twitter', 'twitter.com/awde123', 'https:\/\/twitter.com/awde123')" href="#" class="rowlink">Twitter</a>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <image class="inline" src="resources/images/mail.png"></image>
+              </td>
+              <td>
+                <a id="email" onclick="get_link('email', 'Email', 'gre' + 'g@' + 'kscript.' + 'org', 'mailto:gr' + 'eg@kscri' + 'pt.org')" href="#" class="rowlink">Email</a>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <image class="inline" src="resources/images/house.png"></image>
+              </td>
+              <td>
+                <a href="https://en.wikipedia.org/wiki/Newtons_(cookie)" class="rowlink">Address</a>
+              </td>
+            </tr>
+          </table>
         </div>
       </div>
     </div>
