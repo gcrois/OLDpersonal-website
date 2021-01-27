@@ -51,7 +51,7 @@
                 <image class="inline" src="resources/images/mail.png"></image>
               </td>
               <td>
-                <a id="email" href="mailto:greg@kscript.org" class="rowlink">Email</a>
+                <a id="email" class="rowlink" onclick="alert('The only thing worse than a mailto link is an alert.')">Email</a>
               </td>
             </tr>
             <tr>
@@ -70,7 +70,7 @@
   <script>
     make_link_fancy("github");
     make_link_fancy("twitter");
-    make_link_fancy("email");
+    make_link_fancy("email", "greg@kscript.org");
     make_address_weird("address")
   </script>
   </body>

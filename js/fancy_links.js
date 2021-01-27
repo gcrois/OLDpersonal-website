@@ -144,10 +144,14 @@ class Cursor{
 }
 
 class FancyLink {
-    constructor(elm) {
+    constructor(elm, clean_link) {
         this.elm = elm
         this.link = this.elm.attr('href');
-        this.clean_link = this.link.replace('https://','').replace('http://','').replace('mailto:','');
+        if (clean_link == undefined) {
+            this.clean_link = this.link.replace('https://','').replace('http://','').replace('mailto:','');
+        } else {
+            this.clean_link = clean_link;
+        }
         this.label = this.elm.text();
         this.cursor = new Cursor(this.elm);
         this.waiting = false;
@@ -179,6 +183,7 @@ class FancyLink {
                 this.__reset();
             }.bind(this), 5000)
         } else if (this.status == "free"){
+            this.status = "resetting"
             this.waiting = false;
             this.keytype_replace(this.label);
         }
@@ -192,9 +197,13 @@ class FancyLink {
 
         let interval = 300;
         for (let i = 0; i < steps.length; i++) {
-            interval += 50 + getRandomInt(30);
             switch(steps[i]) {
                 case '-':
+                    if (i > 0 && steps[i - 1] == '-') {
+                        interval += 50 + getRandomInt(10);
+                    } else {
+                        interval += 200 + getRandomInt(10);
+                    }
                     setTimeout(
                         function(){
                             cursor.backspace();
@@ -202,6 +211,11 @@ class FancyLink {
                     );
                     break;
                 case '<':
+                    if (i > 0 && steps[i - 1] == '<') {
+                        interval += 50 + getRandomInt(10);
+                    } else {
+                        interval += 200 + getRandomInt(10);
+                    }
                     setTimeout(
                         function(){
                             cursor.move(-1)
@@ -209,6 +223,11 @@ class FancyLink {
                     );
                     break;
                 default:
+                    if (i > 0 && steps[i - 1] != '<' && steps[i - 1] != '-') {
+                        interval += 50 + getRandomInt(50);
+                    } else {
+                        interval += 200 + getRandomInt(10);
+                    }
                     setTimeout(
                         function(){
                             cursor.type(steps[i]);
@@ -244,9 +263,9 @@ const address_syn = [
     "Address"
 ]
 
-function make_link_fancy(id) {
+function make_link_fancy(id, lab) {
     elm = $("#" + id);
-    let l = new FancyLink(elm);
+    let l = new FancyLink(elm, lab);
 
     if (mobile) {
         elm.attr("href", "#");
@@ -269,6 +288,7 @@ function make_link_fancy(id) {
         });
     }
 }
+
 function make_address_weird(id){
     elm = $("#" + id);
     let l = new FancyLink(elm);
