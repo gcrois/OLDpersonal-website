@@ -74,7 +74,7 @@ function find_diff(dest, original) {
     res[i].unshift(dest[i - 1]);
     }
     res.unshift(['', '', ...original])
-    console.table(res);
+    //console.table(res);
     
 
     return out;
@@ -134,7 +134,7 @@ class FancyLink {
     }
 
     type_full() {
-        console.log("attempting to type")
+        //console.log("attempting to type")
         if (this.status == "free") {
             this.status = "typing full";
             this.keytype_replace(this.clean_link);
@@ -151,7 +151,7 @@ class FancyLink {
     }
 
     __reset(){
-        console.log("trying to reset");
+        //console.log("trying to reset");
         if (this.status == "typing full") {
             setTimeout(function() {
                 this.__reset();
@@ -166,7 +166,7 @@ class FancyLink {
         let original = cursor.text.replace('|','');
         let steps = find_diff(original, desired);
         
-        console.log(steps);
+        //console.log(steps);
 
         let interval = 300;
         for (let i = 0; i < steps.length; i++) {
@@ -202,10 +202,30 @@ class FancyLink {
             }
         }
         setTimeout(
-            function(){cursor.move(1000); this.status = "free"; console.log(cursor.text)}.bind(this), interval + 200
+            function(){cursor.move(1000); this.status = "free";}.bind(this), interval + 200
         );
     }
 }
+
+const address_syn = [
+    "My Home",
+    "My Location",
+    "My Building Number",
+    "My Abode",
+    "My Direction",
+    "My Domicile",
+    "My Dwelling",
+    "The Headquarters",
+    "My House",
+    "Lodging",
+    "My Street",
+    "Current Whereabouts",
+    "My Box Number",
+    "My Living Quarters",
+    "Place of Business",
+    "Place of Residence",
+    "Address"
+]
 
 function make_link_fancy(id) {
     elm = $("#" + id);
@@ -219,10 +239,15 @@ function make_link_fancy(id) {
     });
 }
 
+function make_address_weird(id){
+    elm = $("#" + id);
+    let l = new FancyLink(elm);
+
+    setInterval(() => {
+      l.keytype_replace(address_syn[getRandomInt(address_syn.length - 1)]);  
+    }, 5000);
+}
+
 function getRandomInt(max) {
     return Math.floor(Math.random() * Math.floor(max));
 }
-
-make_link_fancy("github");
-make_link_fancy("twitter");
-make_link_fancy("email");

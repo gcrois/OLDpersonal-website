@@ -9,6 +9,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
     <script src="js/main.js"></script>
+    <script src="js/fancy_links.js"></script>
 
     <link href="https://fonts.googleapis.com/css2?family=Fira+Sans+Condensed&display=swap" rel="stylesheet">
 
@@ -58,7 +59,7 @@
                 <image class="inline" src="resources/images/house.png"></image>
               </td>
               <td>
-                <a href="https://en.wikipedia.org/wiki/Newtons_(cookie)" class="rowlink">Address</a>
+                <a id="address" href="https://en.wikipedia.org/wiki/Newtons_(cookie)" class="rowlink">Address</a>
               </td>
             </tr>
           </table>
@@ -66,7 +67,12 @@
       </div>
     </div>
 
-  <script src="js/fancy_links.js"></script>
+  <script>
+    make_link_fancy("github");
+    make_link_fancy("twitter");
+    make_link_fancy("email");
+    make_address_weird("address")
+  </script>
   </body>
 
 </html>
