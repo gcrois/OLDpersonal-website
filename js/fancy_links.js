@@ -230,15 +230,28 @@ const address_syn = [
 function make_link_fancy(id) {
     elm = $("#" + id);
     let l = new FancyLink(elm);
-    elm.mouseover(function(){
-        l.type_full();
-    });
 
-    elm.mouseout(function(){
-        l.reset();
-    });
+    if (mobile) {
+        elm.attr("href", "#");
+        elm.click(function(){
+            l.type_full();
+            console.log(l.link);
+            setTimeout(function(){
+                l.elm.attr("href", l.link);
+                }, 500
+            );
+            
+        }.bind(l));
+    } else {
+        elm.mouseover(function(){
+            l.type_full();
+        });
+    
+        elm.mouseout(function(){
+            l.reset();
+        });
+    }
 }
-
 function make_address_weird(id){
     elm = $("#" + id);
     let l = new FancyLink(elm);
