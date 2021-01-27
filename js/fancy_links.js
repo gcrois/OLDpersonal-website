@@ -35,11 +35,11 @@ function find_diff(dest, original) {
     let out = []
 
     while (res[i][j] != 0) {
-        let sub_cost = 99999;
+        let sub_cost = Number.MAX_VALUE;
         if (i > 0 && j > 0) sub_cost = res[i - 1][j - 1];  // move cursor left
-        let del_cost = 99999;
+        let del_cost = Number.MAX_VALUE;
         if (i > 0) del_cost = res[i - 1][j];               // backspace -- go up
-        let ins_cost = 99999;
+        let ins_cost = Number.MAX_VALUE;
         if (j > 0) ins_cost = res[i][j - 1];               // type
 
         if (sub_cost <= del_cost && sub_cost <= ins_cost) {
@@ -68,16 +68,39 @@ function find_diff(dest, original) {
         }
     }
 
-    
+    let processed_out = Array();
+    let backspaces = 0;
+    let outtext = "";
+    for (let i = 0; i < out.length; i++) {
+        switch(out[i]) {
+            case '-':
+                backspaces++;
+                break;
+            case '<':
+                processed_out.push(...("-".repeat(backspaces)), ...(outtext), ...("<".repeat(outtext.length + 1)));
+                backspaces = 0;
+                outtext = "";
+                break;
+            default:
+                outtext = out[i] + outtext;
+                break;
+        }
+    }
+    processed_out.push(...("-".repeat(backspaces)), ...(outtext), ...("<".repeat(outtext.length)));
+
+    //console.log(processed_out);
+
+    /*
     res[0].unshift('');
     for (let i = 1; i <= d_n; i++) {
     res[i].unshift(dest[i - 1]);
     }
     res.unshift(['', '', ...original])
     //console.table(res);
+    */
     
 
-    return out;
+    return processed_out;
 }
 
 class Cursor{
@@ -96,7 +119,6 @@ class Cursor{
         this.text = this.elm.text();
         this.loc--;
         console.assert(this.text[this.loc] == '|')
-
     }
     
     type(c) {
@@ -191,11 +213,6 @@ class FancyLink {
                         function(){
                             cursor.type(steps[i]);
                         }, interval
-                    );
-                    setTimeout(
-                        function(){
-                            cursor.move(-1)
-                        }, interval + 20
                     );
                     interval += 20;
                     break;
