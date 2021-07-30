@@ -87,19 +87,7 @@ function find_diff(dest, original) {
         }
     }
     processed_out.push(...("-".repeat(backspaces)), ...(outtext), ...("<".repeat(outtext.length)));
-
-    //console.log(processed_out);
-
-    /*
-    res[0].unshift('');
-    for (let i = 1; i <= d_n; i++) {
-    res[i].unshift(dest[i - 1]);
-    }
-    res.unshift(['', '', ...original])
-    //console.table(res);
-    */
     
-
     return processed_out;
 }
 
