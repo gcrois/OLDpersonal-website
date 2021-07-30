@@ -1,0 +1,62 @@
+body {
+    margin: 0;
+}
+
+.fb-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    width: 100%;
+    flex-wrap: wrap;
+    align-items: flex-start;
+}
+
+.fbi {
+    width: 512px;
+    min-width: 20vw;
+    min-height: 316px;
+    padding: 8px;
+    margin: 14px;
+    flex-grow: 1;
+}
+
+.fbi-head {
+    margin-left: 5%;
+    width: 90%;
+    padding: 4px;
+    text-align: center;
+    font-size: 36px;
+    font-weight: bold;
+}
+
+.fbi-content {
+    margin: 4px;
+    margin-top: 8px;
+    padding: 3px;
+}
+
+.head {
+    width: 100%;
+    text-align: center;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    font-size: 36px;
+    font-weight: bold;
+    color: #FDF7FA;
+}
+
+.head-sub {
+    font-weight: normal;
+    font-size: 24px;
+}
+
+.foot {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    padding: 4px;
+    padding-left: 8px;
+    width: 100%;
+    font-size: 24px;
+    color: #FDF7FA;
+}

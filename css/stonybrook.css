@@ -1,0 +1,33 @@
+/*
+Institution branding specific website
+Must define:
+
+.fb-item background-color
+.fb-container background-color
+body background-color
+*/
+
+body {
+    background-color: #990000;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.fbi {
+    background-color: #FDF7FA;
+    box-shadow: 10px 10px #700000;
+}
+
+.fbi-head {
+}
+
+.fbi-content {
+    background-color: #FDF7FA;
+}
+
+.head {
+    background-color: #0C120C;
+}
+
+.foot {
+    background-color: #0C120C;
+}
