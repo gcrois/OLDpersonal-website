@@ -3,80 +3,111 @@
   <head>
     <meta charset="utf-8">
 
-    <link rel="stylesheet" type="text/css" href="css/poster.css">
-    <link rel="stylesheet" type="text/css" href="css/stonybrook.css">
+    <link rel="stylesheet" type="text/css" href="../css/poster.css">
+    <link rel="stylesheet" type="text/css" href="../css/stonybrook.css">
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
-    <script src="js/main.js"></script>
-    <script src="js/fancy_links.js"></script>
+    <script src="../js/main.js"></script>
+    <script src="../js/fancy_links.js"></script>
 
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
 
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-    <link rel="manifest" href="/site.webmanifest">
+    <link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
+    <link rel="manifest" href="../site.webmanifest">
 
     <title>Accessible Linear Stencil Optimization</title>
   </head>
 
   <body>
-      <header class="head">Title of Poster<div class="head-sub">Subtitle</div></header>
+      <header class="head">Accessible Linear Stencil Optimization<div class="head-sub">Improving Access to State-Of-The-Art Computational Methods</div></header>
       <div class="fb-container">
         <div class="fbi">
-            <div class="fbi-head">Box Title</div>
+            <div class="fbi-head">Stencil Computation Model</div>
             <div class="fbi-content">
-                Box content box content box content box content box content box content box content box content box content box content box content box content box content box content box content box content box content box content box content box content box content box content box content box content box content box content box content box content box content box content box content box content box content box content box content box content box content box content box content box content box content box content
+                The stencil model is used to represent problems which consist of an n-dimensional matrix of data whose cells change over time according to their neighbors as dictated by a stencil. [1] 
+                <br><br>
+                This model is often used in the fields of Partial Differential Equations; (for example, heat transfer, and hydrodynamics). [1]
+                <image src="../resources/images/stencil/fig1.png" class="fig"></image>
             </div>
         </div>
         <div class="fbi">
-            <div class="fbi-head">Box Title</div>
+            <div class="fbi-head">Introduction of FFT Method</div>
             <div class="fbi-content">
-                Box content box content box content box content box content box content box content box content box content box content box content box content box content box content box content box content box content box content box content box content box content box content box content box content box content box content box content box content box content box content box content box content box content box content box content box content box content box content box content box content box content box content
-                Box content box content box content box content box content box content box content box content box content box content box content box content box content box content box content box content box content box content box content box content box content box content box content box content box content box content box content box content box content box content box content box content box content box content box content box content box content box content box content box content box content box content
-                Box content box content box content box content box content box content box content box content box content box content box content box content box content box content box content box content box content box content box content box content box content box content box content box content box content box content box content box content box content box content box content box content box content box content box content box content box content box content box content box content box content box content
+                <ul>
+                    <li>Complexity of best stencil algorithms are linear in both grid size and time [1]</li>
+                    <li>New stencil algorithm utilizes the FFT to allow for repeated squaring [1]</li>
+                    <li>This algorithm is sublinear in either time or grid size [1]</li>
+                </ul>
             </div>
         </div>
         <div class="fbi">
-            <div class="fbi-head">Box Title</div>
+            <div class="fbi-head">Project Overview</div>
             <div class="fbi-content">
-                Box content
+                <ul>
+                    <li>When new computing methods are created, implementation options are needed</li>
+                    <li>Pluto polyhedral optimizer does this through library [2]</li>
+                    <li>Taco Compiler uses online code generation [3]</li>
+                </ul>
             </div>
         </div>
         <div class="fbi">
-            <div class="fbi-head">Box Title</div>
+            <div class="fbi-head">Fourier Stencil Computation Implementation Methods</div>
             <div class="fbi-content">
-                Box content box content box content box content box content box content box content box content box content box content box content box content box content box content box content box content box content box content box content box content box content box content box content box content box content box content box content box content box content box content box content box content box content box content box content box content box content box content box content box content box content box content
+                This research project yielded two methods for code generation of the novel FFT-based method for periodic stencils.
             </div>
         </div>
         <div class="fbi">
-            <div class="fbi-head">Box Title</div>
+            <div class="fbi-head">FourSt Precompiler</div>
             <div class="fbi-content">
-                Box content box content box content box content box content box content box content box content box content box content box content box content box content box content box content box content box content box content box content box content box content box content box content box content box content box content box content box content box content box content box content box content box content box content box content box content box content box content box content box content box content box content
+                <a href="https://gregory.croisdale.us/stencil/precompiler">gregory.croisdale.us/stencil/precompiler</a><br><br>
+                FourSt is a C++ precompilation tool which takes C/C++ source code from stdin and returns an FFT-optimized stencil source to stdout.
+                <image src="../resources/images/stencil/fig2.png" class="fig"></image>
             </div>
         </div>
         <div class="fbi">
-            <div class="fbi-head">Box Title</div>
+            <div class="fbi-head">FourSt Web Interface</div>
             <div class="fbi-content">
-                Box content box content box content box content box content box content box content box content box content box content box content box content box content box content box content box content box content box content box content box content box content box content box content box content box content box content box content box content box content box content box content box content box content box content box content box content box content box content box content box content box content box content
+                <a href="https://gregory.croisdale.us/stencil/web">gregory.croisdale.us/stencil/web</a><br><br>
+                This is a static webpage which can take either a stencil kernel, coefficient matrix, or sparse matrix representation of the model and returns C++ code.
+                <image src="../resources/images/stencil/fig3.png" class="fig"></image>
             </div>
         </div>
         <div class="fbi">
-            <div class="fbi-head">Box Title</div>
+            <div class="fbi-head">Future Work</div>
             <div class="fbi-content">
-                Box content box content box content box content box content box content box content box content box content box content box content box content box content box content box content box content box content box content box content box content box content box content box content box content box content box content box content box content box content box content box content box content box content box content box content box content box content box content box content box content box content box content
+                <ul>
+                    <li>Implement Aperiodic Stencils<br>Currently, the code generators only generate code for periodic stencils. Substantial adjustments must be made in order to allow for boundary conditions.</li>
+                    <li>Adapt FFT Method for non-linear stencils<br>Research is now being done on creating the theoretical model for non-linear stencils optimized using the FFT. Upon completion, the code generators should be updated to reflect this improvement.</li>
+                    <li>Create C/C++ Library<br>A C/C++ Library, while not as transparent as a code generator, would simplify the installation and integration of the FFT-Optimized.</li>
+                    <li>Create Python Library<br>In order to be the most accessible to the researchers who would benefit from this optimization, a Python library should be created to seamlessly integrate with existing repositories and notebooks.</li>
+                    <li>Automate benchmarking<br>An easy and automated way to determine the best stencil computation method would be useful for those wishing to optimize their stencil code.</li>
+                </ul>
             </div>
         </div>
         <div class="fbi">
-            <div class="fbi-head">Box Title</div>
+            <div class="fbi-head">Acknowledgements</div>
             <div class="fbi-content">
-                Box content box content box content box content box content box content box content box content box content box content box content box content box content box content box content box content box content box content box content box content box content box content box content box content box content box content box content box content box content box content box content box content box content box content box content box content box content box content box content box content box content box content
+                This research was funded by Data + Computing = Discovery! at Stony Brook University under NSF award 1950042.
+                <br><br>
+                Special thanks to PhD students Zafar Ahmad and Aaron Gregory for their continual help and guidance.
+            </div>
+        </div>
+        <div class="fbi">
+            <div class="fbi-head">References</div>
+            <div class="fbi-content">
+                [1] Zafar Ahmad, Rezaul Chowdhury, Rathish Das, Pramod Ganapathi, Aaron Gregory, and Yimin Zhu. 2021. Fast stencil computations using fast fourier transforms. Proceedings of the 33rd ACM Symposium on Parallelism in Algorithms and Architectures (2021). DOI:http://dx.doi.org/10.1145/3409964.3461803
+                <br>
+                [2] Uday Bondhugula, Albert Hartono, J. Ramanujam, and P. Sadayappan. 2008. A practical automatic polyhedral parallelizer and locality optimizer. ACM SIGPLAN Notices 43, 6 (2008), 101–113. DOI:http://dx.doi.org/10.1145/1379022.1375595
+                <br>
+                [3] Fredrik Kjolstad, Shoaib Kamil, Stephen Chou, David Lugato, and Saman Amarasinghe. 2017. The tensor algebra compiler. Proc. ACM Program. Lang. 1, OOPSLA, Article 77 (October 2017), 29 pages. DOI:https://doi.org/10.1145/3133901 
             </div>
         </div>
       </div>
       <br>
       <br>
-      <footer class="foot">Footer Text</footer>
+      <footer class="foot">Gregory Croisdale, UT Knoxville | Mentor Rezaul Chowdhury, Stony Brook University</footer>
   </body>
 </html>
