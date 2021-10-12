@@ -4,13 +4,10 @@ body {
 }
 
 #disp {
-  margin-left: 5%;
+  margin: 5% 5% 5% 5%;
   position: absolute;
   width: 90%;
   text-align: center;
-  top: 50%;
-  -ms-transform: translateY(-50%);
-  transform: translateY(-50%);
 }
 
 .left-aligned {
@@ -21,8 +18,14 @@ body {
 a, a:link, a:visited {
   text-decoration: none;
   color: blue;
+  cursor: pointer;
 }
 
 a:hover {
   color: purple;
+}
+
+.ico {
+  font-size: 30px;
+  color: black
 }

@@ -1,7 +1,10 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8">
+    <meta name="description" content="Gregory Croisdale's Personal Site">
+    <meta name="keywords" content="HCI, Computer Science, University of Tennessee, Ancient Lives, Stencil Computation, Legendary PhD Student Applicants">
+    <meta name="author" content="Gregory Croisdale">
 
     <link rel="stylesheet" type="text/css" href="css/main.css">
     <link rel="stylesheet" type="text/css" href="css/homepage.css">
@@ -18,6 +21,8 @@
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
     <link rel="manifest" href="/site.webmanifest">
 
+    <script src="https://kit.fontawesome.com/11bceabebd.js" crossorigin="anonymous"></script>
+
     <title>Gregory Croisdale</title>
   </head>
 
@@ -27,12 +32,28 @@
       <div id="name">
         Gregory Croisdale
         <div class="sub">
-          university of tennessee's resident rapscallion
-          <br>
+          <span id="desc">Welcome to my personal website!</span>
+          <br><br>
           <table>
             <tr>
               <td>
-                <image class="inline" src="resources/images/GitHub-Mark-120px-plus.png"></image>
+                <i class="ico fas fa-blog"></i>
+              </td>
+              <td>
+                <a id="blog" href="blog" class="rowlink">Blog</a>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <i class="ico fas fa-file"></i>
+              </td>
+              <td>
+                <a id="resume" href="resources/resume.pdf" class="rowlink">Résumé</a>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <i class="ico fab fa-github"></i>
               </td>
               <td>
                 <a id="github" href="https://github.com/gcrois" class="rowlink">GitHub</a>
@@ -40,38 +61,41 @@
             </tr>
             <tr>
               <td>
-                <image class="inline" src="resources/images/twitter.png"></image>
+                <i class="ico fab fa-twitter"></i>
               </td>
               <td>
-                <a id="twitter" href="https://twitter.com/awde123" class="rowlink">Twitter</a>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <image class="inline" src="resources/images/mail.png"></image>
-              </td>
-              <td>
-                <a id="email" class="rowlink" onclick="alert('The only thing worse than a mailto link is an alert.')">Email</a>
+                <a id="twitter" href="https://twitter.com/regregably" class="rowlink">Twitter</a>
               </td>
             </tr>
             <tr>
               <td>
-                <image class="inline" src="resources/images/house.png"></image>
+                <i class="ico far fa-envelope"></i>
+              </td>
+              <td>
+                <a id="email" class="rowlink" href="mailto:gcroisda@gmail.com">Email</a>
+              </td>
+            </tr>
+            <!--<tr>
+              <td>
+                <i class="ico fas fa-map-marked-alt"></i>
               </td>
               <td>
                 <a id="address" href="https://en.wikipedia.org/wiki/Newtons_(cookie)" class="rowlink">Address</a>
               </td>
-            </tr>
+            </tr>-->
           </table>
         </div>
       </div>
     </div>
 
   <script>
+    make_link_fancy("blog", "./blog");
+    make_link_fancy("resume", "./resume");
     make_link_fancy("github");
     make_link_fancy("twitter");
-    make_link_fancy("email", "greg@kscript.org");
-    make_address_weird("address")
+    make_link_fancy("email", "gcroisda@gmail.com");
+    make_desc_weird("desc");
+    //make_address_weird("address")
   </script>
   </body>
 

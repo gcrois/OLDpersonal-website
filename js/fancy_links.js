@@ -132,9 +132,13 @@ class Cursor{
 }
 
 class FancyLink {
-    constructor(elm, clean_link) {
+    constructor(elm, clean_link, speed) {
         this.elm = elm
-        this.link = this.elm.attr('href');
+        if (this.elm.attr('href')) this.link = this.elm.attr('href');
+        else this.link = '';
+        if (speed) this.speed = speed;
+        else this.speed = 50;
+
         if (clean_link == undefined) {
             this.clean_link = this.link.replace('https://','').replace('http://','').replace('mailto:','');
         } else {
@@ -188,9 +192,9 @@ class FancyLink {
             switch(steps[i]) {
                 case '-':
                     if (i > 0 && steps[i - 1] == '-') {
-                        interval += 50 + getRandomInt(10);
+                        interval += this.speed + getRandomInt(10);
                     } else {
-                        interval += 200 + getRandomInt(10);
+                        interval += this.speed * 2 + getRandomInt(10);
                     }
                     setTimeout(
                         function(){
@@ -200,9 +204,9 @@ class FancyLink {
                     break;
                 case '<':
                     if (i > 0 && steps[i - 1] == '<') {
-                        interval += 50 + getRandomInt(10);
+                        interval += this.speed + getRandomInt(10);
                     } else {
-                        interval += 200 + getRandomInt(10);
+                        interval += this.speed * 2 + getRandomInt(10);
                     }
                     setTimeout(
                         function(){
@@ -212,16 +216,16 @@ class FancyLink {
                     break;
                 default:
                     if (i > 0 && steps[i - 1] != '<' && steps[i - 1] != '-') {
-                        interval += 50 + getRandomInt(50);
+                        interval += this.speed;
                     } else {
-                        interval += 200 + getRandomInt(10);
+                        interval += this.speed * 2;
                     }
                     setTimeout(
                         function(){
                             cursor.type(steps[i]);
                         }, interval
                     );
-                    interval += 20;
+                    interval += this.speed / 2;
                     break;
             }
         }
@@ -249,11 +253,18 @@ const address_syn = [
     "Place of Business",
     "Place of Residence",
     "Address"
+];
+
+const desc_phrase = [
+    "Computer Scientist specializing in HCI",
+    "University of Tennessee's resident rapscallion",
+    "Looking for a position as a PhD Student in HCI for the Fall of 2022",
+    "B.S. in C.S. with Math & Philosophy Minor",
 ]
 
 function make_link_fancy(id, lab) {
     elm = $("#" + id);
-    let l = new FancyLink(elm, lab);
+    let l = new FancyLink(elm, lab, 40);
 
     if (mobile) {
         elm.attr("href", "#");
@@ -284,6 +295,15 @@ function make_address_weird(id){
     setInterval(() => {
       l.keytype_replace(address_syn[getRandomInt(address_syn.length - 1)]);  
     }, 5000);
+}
+
+function make_desc_weird(id){
+    elm = $("#" + id);
+    let l = new FancyLink(elm, undefined, 30);
+
+    setInterval(() => {
+      l.keytype_replace(desc_phrase[getRandomInt(desc_phrase.length - 1)]);  
+    }, 10000);
 }
 
 function getRandomInt(max) {

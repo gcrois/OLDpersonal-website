@@ -1,7 +1,12 @@
 #me {
     border-radius: 50%;
-    height: 20vw;
-    width: 20vw;
+
+    height: 50vw;
+    width: 50vw;
+
+    max-height: 512px;
+    max-width: 512px;
+
     margin-bottom: 4px;
     object-fit: cover;
 }
