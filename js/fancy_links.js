@@ -1,4 +1,5 @@
 function find_diff(dest, original) {
+    /* levenschtein distance */
     let res = [];
     d_n = dest.length;
     o_n = original.length;
@@ -35,34 +36,27 @@ function find_diff(dest, original) {
     let out = []
 
     while (res[i][j] != 0) {
-        let sub_cost = Number.MAX_VALUE;
-        if (i > 0 && j > 0) sub_cost = res[i - 1][j - 1];  // move cursor left
-        let del_cost = Number.MAX_VALUE;
-        if (i > 0) del_cost = res[i - 1][j];               // backspace -- go up
-        let ins_cost = Number.MAX_VALUE;
-        if (j > 0) ins_cost = res[i][j - 1];               // type
+        // find costs of string operations
+        const sub_cost = (i > 0 && j > 0) ? res[i - 1][j - 1] : Number.MAX_VALUE;
+        const del_cost = (i > 0) ? res[i - 1][j] : Number.MAX_VALUE;
+        const ins_cost = (j > 0) ? res[i][j - 1] : Number.MAX_VALUE;
 
         if (sub_cost <= del_cost && sub_cost <= ins_cost) {
-            if (res[i][j] == res[i - 1][j - 1]) {
-                // console.log("cursor left");
+            if (res[i][j] == res[i - 1][j - 1]) { // move cursor left
                 out.push('<');
             }
-            else {
-                // console.log("sub " + dest[i - 1] + " for " + original[j - 1], i, j);
+            else { // sub char
                 out.push('-'); out.push(original[j - 1]);
             }
             i--; j--;
-        } else if (del_cost <= ins_cost) {
-            //console.log("backspace");
+        } else if (del_cost <= ins_cost) { // delete char
             out.push('-');
             i--;
-        } else {
-            //console.log("type ", dest[i - i]);
+        } else { // type char
             out.push(original[j - 1]);
             j--;
         }
 
-        console.assert(i >= 0 && j >= 0, i, j)
         if (i < 0 || j < 0) {
             break;
         }
@@ -152,7 +146,6 @@ class FancyLink {
     }
 
     type_full() {
-        //console.log("attempting to type")
         if (this.status == "free") {
             this.status = "typing full";
             this.keytype_replace(this.clean_link);
@@ -169,7 +162,6 @@ class FancyLink {
     }
 
     __reset(){
-        //console.log("trying to reset");
         if (this.status == "typing full") {
             setTimeout(function() {
                 this.__reset();
@@ -185,8 +177,6 @@ class FancyLink {
         let original = cursor.text.replace('|','');
         let steps = find_diff(original, desired);
         
-        //console.log(steps);
-
         let interval = 300;
         for (let i = 0; i < steps.length; i++) {
             switch(steps[i]) {
@@ -270,7 +260,6 @@ function make_link_fancy(id, lab) {
         elm.attr("href", "#");
         elm.click(function(){
             l.type_full();
-            console.log(l.link);
             setTimeout(function(){
                 l.elm.attr("href", l.link);
                 }, 500
