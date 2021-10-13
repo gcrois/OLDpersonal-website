@@ -1,0 +1,56 @@
+==================================================================
+https://keybase.io/awde123
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of https://gregory.croisdale.us
+  * I am awde123 (https://keybase.io/awde123) on keybase.
+  * I have a public key ASCgDXnojBaaeZq2_Z6w98CUrgN1WKG5Y7fJPapI3edxVAo
+
+To do so, I am signing this object:
+
+{
+  "body": {
+    "key": {
+      "eldest_kid": "0120c054a5c7826035c7653fe57ce49bb391756bce11735acdd3402ef2e025444b970a",
+      "host": "keybase.io",
+      "kid": "0120a00d79e88c169a799ab6fd9eb0f7c094ae037558a1b963b7c93daa48dde771540a",
+      "uid": "32064b07a2a002c2248a62e14d708819",
+      "username": "awde123"
+    },
+    "merkle_root": {
+      "ctime": 1634133031,
+      "hash": "b38dd18c79ccdb961b5b03cf543b934e1140aa460315f937f6eb4786454b2646aa00fa5eb7c528fa8cd6f3ae3d1e0c6a35742839500354e6b3ec7e48b65193fa",
+      "hash_meta": "f83ec4e1bbf106245b5be61cbd132f11316f4f3bc9e73bd096df4e088669b475",
+      "seqno": 20976138
+    },
+    "service": {
+      "entropy": "CpCi0wj0wOYQ34nqdmY8q+d3",
+      "hostname": "gregory.croisdale.us",
+      "protocol": "https:"
+    },
+    "type": "web_service_binding",
+    "version": 2
+  },
+  "client": {
+    "name": "keybase.io go client",
+    "version": "5.8.0"
+  },
+  "ctime": 1634133061,
+  "expire_in": 504576000,
+  "prev": "d813c27db371be0f9d72a811c23341efd3a3684f43b35b026fb15f6ee7fd3a82",
+  "seqno": 56,
+  "tag": "signature"
+}
+
+which yields the signature:
+
+hKRib2R5hqhkZXRhY2hlZMOpaGFzaF90eXBlCqNrZXnEIwEgoA156IwWmnmatv2esPfAlK4DdVihuWO3yT2qSN3ncVQKp3BheWxvYWTESpcCOMQg2BPCfbNxvg+dcqgRwjNB79OjaE9Ds1sCb7Ffbuf9OoLEIMbu2NHbbcICexZVvwwrWito8QYAcRaDPsjYtx2l5dzCAgHCo3NpZ8RAg7Faqe/Iqd9BEDLzSy5RtogtPXQwSQML1SF5tisdFRmMWSswYINh1/Kgvqijth9IAEnDA/elY0iLggKv3j6eAahzaWdfdHlwZSCkaGFzaIKkdHlwZQildmFsdWXEILAdERD6FL6jHTbmX4CKbMevRsw+Ip06agQ3X0Mi9xQ1o3RhZ80CAqd2ZXJzaW9uAQ==
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/awde123
+
+==================================================================

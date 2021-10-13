@@ -27,5 +27,6 @@ a:hover {
 
 .ico {
   font-size: 30px;
-  color: black
+  color: black;
+  margin-right: 10px;
 }
