@@ -247,10 +247,9 @@ const address_syn = [
 
 const desc_phrase = [
     "Computer Scientist specializing in HCI",
-    "University of Tennessee's resident rapscallion",
-    "Looking for a position as a PhD Student in HCI for the Fall of 2022",
-    "B.S. in C.S. with Math & Philosophy Minor",
-]
+    "University of Michigan's resident rapscallion",
+    "My life ≹ my best life"
+];
 
 function make_link_fancy(id, lab) {
     elm = $("#" + id);
